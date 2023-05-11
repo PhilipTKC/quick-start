@@ -1,0 +1,5 @@
+<div
+    class="fixed top-0 left-0 w-full mx-auto h-2 transition-all duration-1000 rounded-b-md ${progressPercentage === 0 ? 'transparent' : 'bg-gray-300 shadow-md'}">
+    <div class="w-0 h-2 transition-all duration-1000 rounded-b-lg ${progressPercentage < 100 ? 'bg-indigo-500' : 'bg-green-500'}"
+        ref="progressBarElement"></div>
+</div>

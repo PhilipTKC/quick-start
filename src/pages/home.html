@@ -1,0 +1,24 @@
+<div class="container mx-auto">
+    <div class="p-4">
+
+        <div class="my-8">
+            <search-bar hits.two-way="hits"></search-bar>
+        </div>
+
+        <div class="flex-wrap md:flex">
+            <div repeat.for="document of hits | objectKeys" class="p-2 md:w-1/2">
+                <div class="flex-row">
+                    <div class="border-b border-gray-200">
+                        <h1 class="mb-4 font-thin text-indigo-500">${document[0].category}</h1>
+                    </div>
+                    <div class="flex flex-row flex-wrap py-4">
+                        <a class="flex items-center w-1/2" repeat.for="data of document" load="/${data.id}/start">
+                            <mid-dot></mid-dot>
+                            ${data.title}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

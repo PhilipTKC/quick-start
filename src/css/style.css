@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('./CascadiaCode.woff2') format('woff2');
+}
+
+.active {
+    border-color: rgb(99, 102, 241);
+    font-weight: bold;
+}
+
+.active-header {
+    color: rgb(99, 102, 241);
+}
+
+.active-header::before {
+    content: "├";
+    left: 0px;
+    position: absolute;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: 'Varela', sans-serif;
+}
+
+.level-2 {
+    margin-left: 0px;
+}
+
+.level-3 {
+    margin-left: 5px;
+}
+
+.level-4 {
+    margin-left: 10px;
+}
+
+.level-5 {
+    margin-left: 15px;
+}
+
+.level-6 {
+    margin-left: 20px;
+}
+
+code,
+pre {
+    font-family: 'Cascadia Code' !important;
+}
+
+img:not([src]) {
+    visibility: hidden;
+}

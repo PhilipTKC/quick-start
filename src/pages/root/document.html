@@ -1,0 +1,13 @@
+<document-progress-bar></document-progress-bar>
+
+<div class="flex">
+    <div class="w-full">
+        <div class="mt-[100px] mx-auto prose md:max-w-screen-md lg:max-w-screen-xl w-full">
+            <au-compose component.bind="markdownElement" ref="documentRef" lazy-load></au-compose>
+        </div>
+    </div>
+
+    <div class="hidden mx-2 xl:flex">
+        <in-this-document document-ref.bind="documentRef" if.bind="documentExist"></in-this-document>
+    </div>
+</div>

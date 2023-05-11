@@ -1,0 +1,77 @@
+{
+  "name": "quick-start",
+  "description": "",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "???"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@aurelia/router": "latest",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "algoliasearch": "^4.17.0",
+    "animejs": "^3.2.1",
+    "aurelia": "latest",
+    "dayjs": "^1.11.7",
+    "lodash": "^4.17.21",
+    "nprogress": "^0.2.0"
+  },
+  "devDependencies": {
+    "@aurelia/testing": "latest",
+    "@aurelia/ts-jest": "latest",
+    "@aurelia/vite-plugin": "latest",
+    "@types/jest": "^29.5.1",
+    "@types/lodash": "^4.14.194",
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^20.1.0",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@unocss/preset-attributify": "^0.51.12",
+    "@unocss/preset-typography": "^0.51.12",
+    "@unocss/preset-uno": "^0.51.12",
+    "@unocss/preset-web-fonts": "^0.51.12",
+    "@unocss/preset-wind": "^0.51.12",
+    "@unocss/reset": "^0.51.12",
+    "eslint": "^8.40.0",
+    "highlight.js": "^11.8.0",
+    "htmlhint": "^1.1.4",
+    "jest": "^28.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-au-external-links": "git@github.com/PhilipTKC/markdown-it-au-external-links.git",
+    "markdown-it-image-dimensions": "git@github.com:PhilipTKC/markdown-it-image-dimensions-plugin.git",
+    "markdown-it-data-attribute": "git@github.com:PhilipTKC/markdown-it-data-attribute.git",
+    "path": "^0.12.7",
+    "rimraf": "^5.0.0",
+    "tslib": "^2.5.0",
+    "typescript": "5.0.4",
+    "unocss": "^0.51.12",
+    "vite": "4.3.5",
+    "vite-plugin-markdown": "^2.1.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "rimraf dist && vite build",
+    "generate": "node ./base-generator/index.js"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
+      "\\.(ts|html)$": "@aurelia/ts-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "isolatedModules": true
+      }
+    }
+  }
+}

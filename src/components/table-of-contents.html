@@ -1,0 +1,19 @@
+<div class="hidden transition-all bg-white md:flex mt-[72px] overflow-y-auto fixed h-screen" id="table-of-contents"
+    style="height: calc(100vh + -72px);">
+    <nav class="flex-col p-8 overflow-y-auto">
+        <ul repeat.for="content of toc | objectKeys">
+            <ul>
+                <h1 class="text-sm font-bold tracking-wide text-gray-400 uppercase select-none">
+                    ${content[0].parent}
+                </h1>
+
+                <li repeat.for="parent of content" class="my-4">
+
+                    <a load.bind="parent.path1">
+                        ${parent.title | toTitleCase}
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </nav>
+</div>

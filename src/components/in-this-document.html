@@ -1,0 +1,12 @@
+<nav class="sticky top-[72px] mt-[72px] p-6 h-screen" if.bind="headers.length > 0" style="height: calc(100vh - 72px)">
+    <h2 class="tracking-wider font-bold text-md uppercase">Viewing On This Page</h2>
+    <ul id="in-this-document">
+        <li repeat.for="header of headers"
+            class="w-76 my-2 truncate list-disc cursor-pointer select-none transition-all duration-500 tracking-wider text-sm"
+            data-for.bind="header.slug" class.bind="['level-' + header.level]">
+            <a click.trigger="scrollIntoView(header.slug)">
+                ${header.text}
+            </a>
+        </li>
+    </ul>
+</nav>

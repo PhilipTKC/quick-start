@@ -1,0 +1,18 @@
+<div class="mt-[100px] mx-4">
+    <div if.bind="documentExist">
+        <div class="flex flex-wrap items-center justify-center">
+            <button class="p-2 m-2 text-white bg-indigo-300 rounded focus:outline-none hover:bg-indigo-500">
+                # ${attributes.category }
+            </button>
+            <button class="p-2 m-2 text-white bg-blue-300 rounded focus:outline-none hover:bg-blue-500">
+                Last Update ${attributes.last_updated | toDate}
+            </button>
+        </div>
+    </div>
+
+    <div class="w-full">
+        <div class="mx-auto prose md:max-w-screen-md lg:max-w-screen-xl w-full">
+            <au-compose component.bind="markdownElement" ref="documentRef"></au-compose>
+        </div>
+    </div>
+</div>

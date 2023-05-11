@@ -1,0 +1,12 @@
+#nprogress {
+    @apply pointer-events-none;
+}
+
+#nprogress .bar {
+    background: #FFBD00;
+    @apply fixed z-50 top-0 left-0 w-full h-1;
+}
+
+#nprogress .peg {
+    @apply block absolute top-0 right-0 w-full h-full opacity-100;
+}

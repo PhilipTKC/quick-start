@@ -1,0 +1,11 @@
+{
+    "devDependencies": {
+        "algoliasearch": "^4.17.0",
+        "chokidar": "^3.5.3",
+        "dotenv": "^16.0.3",
+        "fast-glob": "^3.2.12",
+        "front-matter": "^4.0.2",
+        "lodash": "^4.17.21",
+        "path": "^0.12.7"
+    }
+}
