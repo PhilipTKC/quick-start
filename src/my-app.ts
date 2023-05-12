@@ -1,9 +1,9 @@
 import { IRoute } from "@aurelia/router";
 import { IEventAggregator } from "aurelia";
 
-import { AnimationHooks } from "./lifecycle-hooks/animation-hooks";
+import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
 
-import { dom } from "./_fontawesome";
+import { dom } from "@/_fontawesome";
 
 import '@unocss/reset/tailwind.css';
 import "./css/style.css";

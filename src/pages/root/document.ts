@@ -18,9 +18,9 @@ export class Document implements IRouteableComponent {
         return "Document";
     };
 
-    private markdownElement;
-
     @bindable private documentRef;
+
+    private markdownElement;
 
     private observer: IntersectionObserver;
 
@@ -53,7 +53,7 @@ export class Document implements IRouteableComponent {
 
         this.markdownElement = CustomElement.define({
             name: 'markdown-document',
-            template: html || ""
+            template: html || "" // TODO: Add a fallback template
         });
     }
 

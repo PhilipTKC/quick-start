@@ -31,7 +31,7 @@ export class Start implements IRouteableComponent {
 
         this.markdownElement = CustomElement.define({
             name: 'markdown-document',
-            template: html || ""
+            template: html || "" // TODO: Add a fallback template
         });
 
     }

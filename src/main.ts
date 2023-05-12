@@ -1,10 +1,10 @@
 import Aurelia from 'aurelia';
 import { RouterConfiguration } from '@aurelia/router';
 
-import { MyApp } from './my-app';
-import * as components from "./components";
-import * as valueConverters from "./value-converters";
-import * as customAttributes from "./custom-attributes";
+import { MyApp } from '@/my-app';
+import * as components from "@/components";
+import * as valueConverters from "@/value-converters";
+import * as customAttributes from "@/custom-attributes";
 
 Aurelia
     .register(

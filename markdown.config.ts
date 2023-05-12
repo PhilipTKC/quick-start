@@ -31,6 +31,7 @@ const markdownItConfig = markdownIt({
         loading: "lazy",
         decode: true,
         // When removeSource is used, DataAttributesPlugin must be used.
+        // see ./src/custom-attributes/lazy-load.ts
         removeSource: true
     })
 
