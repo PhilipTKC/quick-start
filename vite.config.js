@@ -10,15 +10,26 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [
-    aurelia(),
     UnoCSS(),
+    aurelia(),
     markdown({ mode: [Mode.HTML, Mode.TOC], markdownIt: markdownItConfig }),
   ],
+  base: "/",
   resolve: {
     alias:
     {
       '@': path.resolve(__dirname, './src')
     }
   },
-  assetsInclude: ['_content/**/*.md']
+  assetsInclude: ['_content/**/*.md'],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "aurelia": ["aurelia"],
+          "fortawesome": ["@fortawesome/fontawesome-svg-core", "@fortawesome/free-solid-svg-icons", "@fortawesome/free-brands-svg-icons"],
+        }
+      }
+    }
+  }
 });

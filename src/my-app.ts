@@ -1,18 +1,16 @@
 import { IRoute } from "@aurelia/router";
 import { IEventAggregator } from "aurelia";
 
-import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
+import { AnimationHooks } from "./lifecycle-hooks/animation-hooks";
 
-import { dom } from "@/_fontawesome";
+import { dom } from "./_fontawesome";
+
+import '@unocss/reset/tailwind.css';
+import "./css/style.css";
+import "./css/highlighter.css";
+import "./css/nprogress.css";
 
 import nProgress from "nprogress";
-
-import "@/css/style.css";
-import 'virtual:uno.css';
-import '@unocss/reset/tailwind.css';
-
-import "@/css/highlighter.css";
-import "@/css/nprogress.css";
 
 export class MyApp {
   static dependencies = [AnimationHooks];

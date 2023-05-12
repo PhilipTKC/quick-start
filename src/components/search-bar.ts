@@ -1,7 +1,6 @@
 import algoliasearch from 'algoliasearch/lite';
 import { bindable, ICustomElementViewModel } from 'aurelia';
 
-import { AlgoliaHitResults } from '../interfaces';
 import config from "../../algolia.config.json";
 
 import _ from "lodash"

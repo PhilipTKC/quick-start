@@ -5,8 +5,6 @@ import { IDocumentService } from "@/services/document";
 import { convertToTitleCase, extractIdFromPath } from "@/utility";
 import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
 
-import notFound from "./templates/document-not-found.html";
-
 type Parameters = { root: string; document: string }
 
 export class Document implements IRouteableComponent {
@@ -55,7 +53,7 @@ export class Document implements IRouteableComponent {
 
         this.markdownElement = CustomElement.define({
             name: 'markdown-document',
-            template: html || notFound
+            template: html || ""
         });
     }
 

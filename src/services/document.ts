@@ -12,8 +12,7 @@ export const IDocumentService = DI.createInterface<IDocumentService>(
 export class DocumentService {
     async retrieveRootDocument(documentId: string): Promise<MarkdownDocument> {
         try {
-            const path = `../_content/${documentId}/${documentId}.md`;
-            return await import(/* @vite-ignore */ path);
+            return await import(`../_content/${documentId}/${documentId}.md`);
         } catch {
             return { attributes: null, html: null, toc: null };
         }
@@ -21,17 +20,22 @@ export class DocumentService {
 
     async retrieveTableOfContents(id: string): Promise<TableOfContents> {
         try {
-            const path = `../_content/${id}/docs/toc.json`;
-            return await import(/* @vite-ignore */ path).then((x) => x.default);
+            return await import(`../_content/${id}/docs/toc.json`).then((x) => x.default);
         } catch {
             return null;
         }
     }
 
-    async retrieveDocument(documentId: string, documentPath: string): Promise<MarkdownDocument> {
+    async retrieveDocument(documentId: string, documentPath: string): Promise<any> {
         try {
-            const path = `../_content/${documentId}/docs/${documentPath}.md`;
-            return await import(/* @vite-ignore */ path);
+            /*
+            * https://vitejs.dev/guide/features.html#dynamic-import
+            * Note that variables only represent file names one level deep.
+            * If file is 'foo/bar', the import would fail. For more advanced usage, you can use the glob import feature.
+            * https://vitejs.dev/guide/features.html#glob-import
+            */
+            const modules = import.meta.glob(`../_content/**/*.md`);
+            return await modules[`../_content/${documentId}/docs/${documentPath}.md`]();
         } catch {
             return { attributes: null, html: null, toc: null };
         }

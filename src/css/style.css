@@ -1,7 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: 'Cascadia Code';
     src: url('./CascadiaCode.woff2') format('woff2');
-}
+} */
+
+@unocss;
 
 .active {
     border-color: rgb(99, 102, 241);
@@ -51,10 +53,10 @@ body {
     margin-left: 20px;
 }
 
-code,
+/* code,
 pre {
     font-family: 'Cascadia Code' !important;
-}
+} */
 
 img:not([src]) {
     visibility: hidden;

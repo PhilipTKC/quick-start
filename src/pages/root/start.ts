@@ -5,8 +5,6 @@ import { IDocumentService } from "@/services";
 import { Attributes, MarkdownDocument } from "@/interfaces";
 import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
 
-import rootNotFound from "./templates/root-not-found.html";
-
 export class Start implements IRouteableComponent {
     static dependencies = [AnimationHooks];
     
@@ -33,7 +31,7 @@ export class Start implements IRouteableComponent {
 
         this.markdownElement = CustomElement.define({
             name: 'markdown-document',
-            template: html || rootNotFound
+            template: html || ""
         });
 
     }
