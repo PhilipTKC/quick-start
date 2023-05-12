@@ -6,6 +6,8 @@ import * as components from "@/components";
 import * as valueConverters from "@/value-converters";
 import * as customAttributes from "@/custom-attributes";
 
+import "virtual:uno.css";
+
 Aurelia
     .register(
         RouterConfiguration.customize({

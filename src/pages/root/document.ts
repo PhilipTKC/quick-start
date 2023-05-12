@@ -69,6 +69,10 @@ export class Document implements IRouteableComponent {
         return document ? `${root}/${document}` : root;
     }
 
+    /*
+    * TODO: REFACTOR!
+    * Determine cause of bug where the headers are not being highlighted
+    */
     intersectionObserver() {
         const headers = this.platform.document.querySelectorAll("[data-key], [data-key-content]");
 
@@ -101,7 +105,7 @@ export class Document implements IRouteableComponent {
 
             });
         }, {
-            rootMargin: "-72px 0px 0px 0px",
+            rootMargin: "0px 0px 0px 0px",
         });
 
         headers.forEach((header) => {
