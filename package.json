@@ -57,7 +57,7 @@
     "start": "vite",
     "preview": "pnpm build && vite preview",
     "build": "rimraf dist && vite build",
-    "generate": "node ./base-generator/index.js"
+    "generate": "npx ts-node ./base-generator/src"
   },
   "jest": {
     "testEnvironment": "jsdom",
