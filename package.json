@@ -45,6 +45,7 @@
     "markdown-it-au-external-links": "https://github.com/PhilipTKC/markdown-it-au-external-links.git",
     "markdown-it-data-attribute": "https://github.com/PhilipTKC/markdown-it-data-attribute.git",
     "markdown-it-image-dimensions": "https://github.com/PhilipTKC/markdown-it-image-dimensions-plugin.git",
+    "markdown-it-code-collection": "https://github.com/PhilipTKC/markdown-it-code-collection.git",
     "path": "^0.12.7",
     "rimraf": "^5.0.0",
     "tslib": "^2.5.0",

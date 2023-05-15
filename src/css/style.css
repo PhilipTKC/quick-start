@@ -61,3 +61,34 @@ pre {
 img:not([src]) {
     visibility: hidden;
 }
+
+.code-block {
+    display: flex;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.code-block:not(.active) {
+    display: none;
+}
+
+.tab ul {
+    display: flex;
+    list-style: none;
+}
+
+.tab li {
+    display: inline-flex;
+    padding: 10px;
+    background-color: rgb(248, 248, 248);
+    user-select: none;
+}
+
+.code-tab.active {
+    background-color: rgb(230, 230, 230);
+}
+
+.code-tab:hover {
+    cursor: pointer;
+    background-color: rgb(190, 190, 190);
+}

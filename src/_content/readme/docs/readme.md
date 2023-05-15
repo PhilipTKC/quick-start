@@ -1,39 +1,137 @@
-# First Header
+---
+title: Code Collection Example
+---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget leo sapien. Proin varius posuere orci vitae sagittis. Pellentesque ultricies porttitor elit, id tempor arcu pellentesque non. Nulla ac leo sagittis, laoreet elit a, consectetur justo. Curabitur pharetra malesuada vulputate. Praesent pretium sed turpis ut tempor. Donec accumsan consectetur bibendum. Sed quis vestibulum turpis. Duis luctus, turpis at convallis sagittis, ex odio scelerisque nisl, nec bibendum quam sapien non ante.
+# Awesome Code
+
+{{ group="group1" tabs=["Typescript", "Javascript", "Markdown", "C#"] }}
+
+```ts { group="group1" tab="Typescript" }
+console.log('Hello world');
+```
+
+```js { group="group1" tab="Javascript" }
+function generateRandomCodeSnippet() {
+  // List of keywords and symbols to use in the code
+  const keywords = ['let', 'const', 'if', 'else', 'for', 'while', 'function', 'return', 'console.log'];
+  const symbols = ['=', '==', '===', '!=', '!==', '+', '-', '*', '/', '%', '++', '--', '(', ')', '{', '}', ';'];
+
+  // Randomly choose the number of lines of code to generate
+  const numLines = Math.floor(Math.random() * 5) + 1;
+
+  // Generate each line of code
+  let code = '';
+  for (let i = 0; i < numLines; i++) {
+    // Randomly choose the length of the line of code
+    const lineLength = Math.floor(Math.random() * 5) + 1;
+
+    // Generate the line of code
+    let line = '';
+    for (let j = 0; j < lineLength; j++) {
+      // Randomly choose a keyword or symbol
+      const isKeyword = Math.random() < 0.5;
+      const word = isKeyword ? keywords[Math.floor(Math.random() * keywords.length)] 
+      : symbols[Math.floor(Math.random() * symbols.length)];
+
+      // Add the word to the line of code
+      line += word + ' ';
+    }
+
+    // Add the line of code to the overall code snippet
+    code += line.trim() + ';\n';
+  }
+
+  // Return the generated code snippet
+  return code;
+}
+
+// Example usage
+console.log(generateRandomCodeSnippet());
+```
+
+```md { group="group1" tab="Markdown" }
+# Hello
+```
+
+```cs { group="group1" tab="C Sharp" }
+Console.WriteLine("Hello World")
+```
+
+{{ /group }}
+
+{{ group="group2" tabs=["Typescript", "Javascript"] }}
+
+```ts { group="group2" tab="Typescript" }
+console.log('Hello world');
+```
+
+```js { group="group2" tab="Javascript" }
+function generateRandomCodeSnippet() {
+  // List of keywords and symbols to use in the code
+  const keywords = ['let', 'const', 'if', 'else', 'for', 'while', 'function', 'return', 'console.log'];
+  const symbols = ['=', '==', '===', '!=', '!==', '+', '-', '*', '/', '%', '++', '--', '(', ')', '{', '}', ';'];
+
+  // Randomly choose the number of lines of code to generate
+  const numLines = Math.floor(Math.random() * 5) + 1;
+
+  // Generate each line of code
+  let code = '';
+  for (let i = 0; i < numLines; i++) {
+    // Randomly choose the length of the line of code
+    const lineLength = Math.floor(Math.random() * 5) + 1;
+
+    // Generate the line of code
+    let line = '';
+    for (let j = 0; j < lineLength; j++) {
+      // Randomly choose a keyword or symbol
+      const isKeyword = Math.random() < 0.5;
+      const word = isKeyword ? keywords[Math.floor(Math.random() * keywords.length)] 
+      : symbols[Math.floor(Math.random() * symbols.length)];
+
+      // Add the word to the line of code
+      line += word + ' ';
+    }
+
+    // Add the line of code to the overall code snippet
+    code += line.trim() + ';\n';
+  }
+
+  // Return the generated code snippet
+  return code;
+}
+
+// Example usage
+console.log(generateRandomCodeSnippet());
+```
+
+{{ /group }}
+
+# Lazy Loading Example
+
+Keep scrolling down to see images lazy load!
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis, neque a gravida ornare, turpis nulla laoreet mauris, eget rhoncus turpis magna quis felis. Praesent suscipit risus ex, quis volutpat massa tincidunt nec. Curabitur eleifend velit nibh, sed pellentesque odio varius at. Mauris tincidunt volutpat orci, sit amet faucibus ante consequat non. Aliquam consectetur ac libero in imperdiet. Proin aliquam quam commodo justo rutrum, sit amet facilisis augue mattis. Praesent volutpat justo sit amet auctor laoreet. Vestibulum vitae ligula interdum, volutpat velit non, maximus felis. Integer nec rhoncus metus. Praesent convallis risus id purus porttitor dignissim. Sed nec urna aliquam, volutpat magna eget, congue nibh. Integer at fermentum magna.
+
+Integer mattis vestibulum magna et lobortis. Nulla facilisi. Mauris ac pharetra urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam nec dui vel massa finibus convallis. Nam vestibulum dui vitae erat dignissim, ac interdum urna congue. Maecenas quam purus, aliquam eget sagittis vel, elementum quis turpis. Suspendisse molestie vulputate leo, nec consequat justo vulputate at. Proin at congue mi, non fermentum libero. Aenean congue, nunc quis maximus tincidunt, risus justo hendrerit elit, vitae volutpat tellus est id urna.
+
+Nullam tempor, sem eu sodales varius, turpis quam fermentum ipsum, in aliquet ante tortor in lorem. Vestibulum ultrices augue eu convallis pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec gravida fermentum neque ac ultrices. Donec ut risus nec tortor mattis faucibus. Maecenas aliquam eget mi sed feugiat. Pellentesque ex justo, scelerisque nec turpis in, sodales volutpat sapien. Aenean sed lacus eget diam pulvinar scelerisque. Curabitur tortor libero, sagittis in elementum quis, viverra vel felis. Suspendisse lacinia leo lacus, vel imperdiet ipsum eleifend id. Aenean massa nulla, bibendum vel sagittis scelerisque, fermentum quis erat. Proin nec metus at orci fermentum placerat. In interdum mi eu quam mattis, in blandit justo imperdiet.
+
+Ut ultrices, augue eu laoreet convallis, massa purus semper eros, sit amet mattis quam tortor vel risus. Vestibulum consectetur bibendum felis, in tempus orci tristique a. Curabitur euismod varius dapibus. In vitae urna vitae felis efficitur placerat et in eros. Fusce imperdiet ornare metus, non sodales est placerat suscipit. Nulla convallis leo ante, nec pretium tortor vehicula non. Aenean pulvinar faucibus urna, ac molestie elit ornare vel. Morbi lacinia fringilla dui, quis volutpat diam lobortis in. Nam imperdiet maximus libero vel ultricies. Vestibulum condimentum, nisl nec fermentum tincidunt, ipsum dui ornare ligula, vitae euismod nisl sem non ipsum. In convallis iaculis neque, vel fermentum libero mollis id. Curabitur id eleifend tortor. Donec in massa tristique, mollis tellus accumsan, porta massa. Quisque vehicula pellentesque quam ac cursus.
+
+Suspendisse nibh purus, pellentesque vel nibh a, dignissim feugiat orci. Cras ornare odio mollis, sodales quam eu, pretium elit. Cras non purus molestie, imperdiet dolor sed, vehicula sapien. Fusce pharetra venenatis commodo. Nunc lorem velit, molestie id posuere vel, iaculis id metus. Sed viverra porta scelerisque. Vivamus et efficitur tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi purus sem, elementum non turpis in, ullamcorper convallis ante. Sed iaculis nunc quis interdum consectetur. Donec varius, leo quis ullamcorper mollis, quam enim eleifend eros, et accumsan quam felis vitae libero.
+
+![Mountain Landscape](https://source.unsplash.com/random/?mountains&width=600&height=600 "Mountains")
 
 Ut consequat commodo hendrerit. Fusce tempor ipsum in ipsum iaculis, scelerisque finibus purus tincidunt. Suspendisse ultrices nisl sapien, nec rutrum risus molestie consectetur. Nunc sed pellentesque lacus. Ut pharetra orci id malesuada blandit. In sed hendrerit quam. Proin id finibus ligula. Aliquam maximus lacinia ligula, eu rutrum tellus. Curabitur fringilla sapien eget nulla fringilla sodales. Suspendisse odio velit, bibendum ut lectus ut, laoreet convallis quam. Mauris ut erat consectetur, porttitor neque et, sodales ligula. Proin at odio id eros tempus auctor eget eu ligula.
+
+![Cityscape at Night](https://source.unsplash.com/random/?city,night&width=600&height=500 "City at Night")
+
+![Cute Puppies](https://source.unsplash.com/random/?puppies&width=600&height=400 "Puppies")
 
 Aenean eu lorem nisi. Ut condimentum quis urna volutpat porttitor. Suspendisse viverra nisl felis, ut placerat velit elementum ut. Nunc condimentum lobortis dolor at imperdiet. Nullam tincidunt velit arcu, a semper leo viverra nec. Maecenas fermentum euismod risus quis bibendum. Vestibulum finibus efficitur ex eget aliquet. Fusce pharetra, ligula ac posuere lobortis, metus libero pharetra purus, id ultricies mauris nibh at dui. In varius posuere erat et egestas.
 
 Sed consequat leo magna, vitae pulvinar odio rhoncus ac. Proin felis nibh, rutrum non dapibus nec, eleifend id odio. Pellentesque nisl ligula, molestie id metus quis, volutpat pellentesque tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis lorem justo, vestibulum a iaculis a, placerat at odio. Nunc justo urna, ornare et rhoncus a, pellentesque in elit. Sed nibh odio, cursus non euismod sit amet, pulvinar nec risus. In ac consectetur mi.
 
-Maecenas non purus sed quam mattis rutrum. Donec ultricies ipsum vitae placerat viverra. In hac habitasse platea dictumst. Suspendisse vestibulum malesuada magna. Nullam pellentesque massa id diam accumsan sodales sed sit amet mi. Nullam velit magna, interdum eu mi at, bibendum elementum nisi. Phasellus egestas quis ligula quis eleifend. Curabitur in orci massa. Duis ullamcorper, erat sed dignissim mollis, ex erat mattis massa, vel suscipit nulla enim id nisi. Nam dolor elit, consectetur ut tellus commodo, laoreet facilisis neque.
+![Beach Scenery](https://source.unsplash.com/random/?beach&width=100&height=200 "Beach")
 
-Proin in consequat felis, in euismod mi. Curabitur faucibus, neque non vulputate pretium, ex neque condimentum est, vel mollis mauris nisi vel magna. Duis sed metus et purus pellentesque pretium. Sed porta mi ac purus eleifend facilisis. Integer feugiat elementum enim, ac sagittis odio. Nam id cursus ipsum, sit amet finibus eros. Etiam velit leo, consequat ac dolor id, commodo efficitur magna. Suspendisse mauris mi, dapibus in mi id, varius molestie magna. Donec consequat placerat justo ac rhoncus. Nulla convallis in lorem sit amet imperdiet. Suspendisse sit amet lacus ac dui aliquet consectetur. Mauris quis felis rutrum odio vestibulum gravida ac in neque. Maecenas at nibh vitae elit consectetur consequat. Pellentesque rutrum erat a odio lobortis, vel gravida est egestas. Nullam odio justo, porta ut urna sit amet, vestibulum suscipit tortor. Morbi et fringilla dolor.
-
-Mauris varius nisl quis euismod ullamcorper. Donec quis suscipit turpis. Nam augue justo, dictum sit amet nisl vitae, fringilla finibus augue. Duis elementum arcu quis eros mollis varius. Suspendisse potenti. Duis porta et ligula at malesuada. Mauris fermentum turpis tellus, sit amet efficitur magna convallis ullamcorper. Nam vestibulum lectus leo, in varius nulla rutrum sit amet. Integer arcu justo, consequat ac nibh ut, ornare consectetur nulla.
-
-## Second Header
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a vulputate mauris, vel blandit ex. Nunc vel mi sed enim sodales scelerisque. Quisque vitae euismod ligula. Cras iaculis eget purus id tincidunt. Praesent ac nulla ut tellus dapibus semper nec ut purus. In hendrerit lacinia ante vitae dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed pellentesque orci in sapien tincidunt cursus. Etiam tempor, purus eget ornare ullamcorper, velit mauris finibus enim, condimentum convallis enim lorem eu est. Pellentesque dapibus nibh in enim sodales, in sagittis magna imperdiet.
-
-Nam orci mi, rhoncus vel enim eu, viverra condimentum mi. Nam accumsan pretium erat eu ullamcorper. In vel efficitur tellus, sed auctor nibh. Ut a hendrerit orci, et semper odio. Nullam tristique purus augue, vel vestibulum eros scelerisque a. Nam ut purus ipsum. Nam et aliquam diam, ultrices condimentum risus. Quisque nec condimentum dolor. Donec rhoncus sit amet justo ac fringilla. Phasellus molestie pulvinar fringilla. Curabitur non faucibus dui. Mauris et elit elementum, ullamcorper nibh id, auctor est. Vivamus aliquet feugiat diam, vitae elementum lorem luctus id. Nulla eleifend justo nunc, a tempor nisl lobortis in. Nullam eget hendrerit lacus, ac finibus est. Fusce sagittis tortor nec ligula accumsan, a euismod tortor dictum.
-
-Vestibulum egestas pretium ipsum, mollis pretium quam pharetra porta. Donec suscipit ex et interdum finibus. Aliquam id maximus lorem. Quisque convallis felis nulla, eu rutrum augue semper sit amet. Morbi semper orci ac iaculis convallis. Praesent pulvinar sem turpis, vel suscipit mauris feugiat ac. Nunc nulla nunc, vestibulum id odio eget, convallis mattis tortor. Donec efficitur hendrerit lacus. Nunc nec dui non ante pulvinar lobortis a eget diam. Aenean accumsan, mi consequat rhoncus finibus, erat nunc placerat enim, vel tempus purus nibh in ligula. Curabitur vulputate consectetur ipsum, vitae cursus quam congue a. Curabitur porttitor sit amet lorem id venenatis.
-
-Ut viverra varius neque eget vestibulum. Aliquam eu vehicula leo. Praesent ultrices lacus sit amet erat interdum hendrerit. Nullam eu dolor purus. Duis varius aliquet iaculis. Morbi rutrum vel massa sed volutpat. Fusce quis arcu sit amet ex semper dignissim id id nisi. Donec blandit magna felis, vitae vehicula sem semper vel. Sed imperdiet volutpat lorem. Aliquam iaculis lectus sit amet pharetra consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam justo diam, vehicula hendrerit interdum quis, iaculis tempus nulla.
-
-Pellentesque efficitur nulla vel nisl ultricies, non iaculis tellus porttitor. Pellentesque et nunc tincidunt, fermentum dui et, efficitur purus. Aliquam ligula quam, finibus a risus quis, interdum efficitur nisl. Fusce suscipit dolor sit amet imperdiet hendrerit. In dapibus, elit id rhoncus vehicula, nisi mauris porttitor nunc, ac venenatis leo nibh suscipit odio. Nulla accumsan enim nec nulla laoreet, vitae sagittis turpis posuere. Vestibulum vel feugiat eros, eu imperdiet nulla. Phasellus dapibus tempus ullamcorper. Sed eu imperdiet elit, ultrices pellentesque magna. Maecenas quis odio luctus est semper molestie. Duis venenatis vehicula augue, mattis sollicitudin dolor laoreet id. Phasellus euismod purus vel velit placerat cursus. Duis laoreet enim tincidunt, dictum libero a, hendrerit erat. Aenean diam massa, malesuada a lacinia a, tincidunt sit amet lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse eget erat pellentesque, interdum mi quis, rhoncus urna.
-
-## Third Header
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper, magna sit amet commodo sodales, tortor ex lobortis nulla, suscipit efficitur est libero a lacus. Duis quis elit tellus. Pellentesque congue elementum ex eu posuere. Sed ut neque ac ligula molestie scelerisque nec ac lacus. Integer varius, quam sed sodales placerat, ligula purus feugiat magna, in semper tortor augue a risus. Maecenas vel dui ac velit gravida mattis. Nulla ac vehicula ligula. Nam ac porttitor nisl. Maecenas luctus nisi eu lacinia finibus. Nullam nec leo quam. Mauris nec leo sit amet odio congue dictum.
-
-Integer tincidunt nibh vel neque placerat, vitae ornare lacus dignissim. Ut nisl diam, condimentum ut mattis quis, rhoncus vel magna. Sed et ornare urna, ac pellentesque urna. Vivamus libero mi, posuere ac elementum a, eleifend vel metus. Maecenas sed sem quis tortor aliquet tincidunt id placerat est. Nunc a euismod diam. Proin tortor purus, fringilla ut magna vitae, eleifend rhoncus magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac viverra mauris, efficitur eleifend turpis. Vestibulum vitae magna condimentum, consectetur leo at, egestas diam. Mauris tempus blandit diam feugiat faucibus. Praesent volutpat, nunc ut viverra convallis, leo tortor placerat massa, ac iaculis nisl nisi condimentum metus. Suspendisse elit ante, imperdiet ac mollis vel, dignissim vitae libero. Sed sit amet aliquet tellus.
-
-Vivamus suscipit euismod elit. Mauris at sapien id eros suscipit suscipit. Nulla bibendum at dolor sed semper. Praesent lobortis efficitur sodales. Aliquam in malesuada dui. Suspendisse bibendum mi magna, non semper magna porta eget. Curabitur justo augue, tristique sit amet mi eu, sagittis cursus eros. Sed dapibus suscipit purus, sed interdum dui imperdiet eu. Nulla non accumsan nulla. Fusce volutpat, arcu id tristique vulputate, purus orci egestas ligula, sed convallis diam mauris et erat.
-
-Pellentesque dolor magna, interdum a urna in, tempor imperdiet erat. Pellentesque id libero nec purus scelerisque porta. Morbi aliquet id felis volutpat facilisis. In non neque ut ipsum auctor sollicitudin sed sit amet nibh. Maecenas commodo lobortis tortor, et mollis nunc ornare vitae. Donec vel finibus purus. Quisque at elementum enim. Pellentesque eros elit, malesuada non volutpat quis, convallis commodo orci. Nullam mollis nisl ante, suscipit ultrices lectus mollis a. Quisque sapien nunc, vehicula nec blandit eu, volutpat ut neque. Donec sit amet ornare ipsum. Nullam ipsum turpis, tempor quis magna sit amet, molestie mollis quam. Quisque sed ante velit. Etiam tristique lorem eu nibh bibendum scelerisque.
-
-Proin ac ex enim. Morbi consectetur, nisl quis luctus interdum, diam mi tempor lectus, ac facilisis lectus mauris id neque. Nullam lorem ipsum, ultricies eget commodo at, dapibus sed ligula. Maecenas viverra, libero eu dictum dapibus, lectus lectus faucibus lacus, a molestie risus metus ac odio. Phasellus vitae pretium quam. Aenean vitae justo nulla. Cras dapibus urna mauris, id cursus est dapibus quis. Fusce a urna venenatis, consectetur quam eu, lobortis dui. Integer a ligula quis risus tincidunt scelerisque id et est. Nam euismod tincidunt ultricies. Donec malesuada eros at erat posuere convallis. Maecenas convallis tortor non nisi volutpat ullamcorper. Morbi iaculis ac ante eu ullamcorper.
+![Delicious Food](https://source.unsplash.com/random/?food&width=300&height=200 "Food")

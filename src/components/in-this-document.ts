@@ -45,17 +45,21 @@ export class InThisDocument implements ICustomElementViewModel {
 
     scrollIntoView(id: string) {
         // Retrieve the element with the given id
-        const element = document.querySelector(`[data-key='${id}']`);
+        const element = this.documentRef.querySelector(`[data-key='${id}']`);
 
         // Retrieve the height of the tab navigator
-        const tabNavigator = document.getElementById("tab-navigator");
+        // TODO: Calculate this dynamically
+        const tabNavigatorHeight = 72;
+
         // Offset the scroll position by the height of the tab navigator
-        const yOffset = -tabNavigator.offsetHeight - 10;
+        const yOffset = -tabNavigatorHeight - 10;
 
         if (element) {
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            const { top } = element.getBoundingClientRect();
+            const { pageYOffset } = this.platform.window;
+            const y = top + pageYOffset + yOffset;
             // Smooth scroll to the element
-            window.scrollTo({ top: y, behavior: 'smooth' });
+            this.platform.window.scrollTo({ top: y, behavior: 'smooth' });
         }
     }
 }

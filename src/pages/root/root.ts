@@ -1,4 +1,4 @@
-import { IRoute, IRouteableComponent, Parameters } from "@aurelia/router";
+import { IRoute, IRouteableComponent, Parameters, ReloadBehavior } from "@aurelia/router";
 
 import { convertToTitleCase } from "@/utility";
 

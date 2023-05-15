@@ -1,3 +1,7 @@
+---
+title: Lazy Load Example
+---
+
 # Lazy Loading Example
 
 Keep scrolling down to see images lazy load!

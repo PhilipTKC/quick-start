@@ -13,8 +13,9 @@ Aurelia
         RouterConfiguration.customize({
             useUrlFragmentHash: false,
             title: {
-                appTitle: "${componentTitles}${appTitleSeparator}Quickstart"
-            }
+                appTitle: "${componentTitles}${appTitleSeparator}Quickstart",
+            },
+            swapOrder: 'detach-current-attach-next',
         }),
         components,
         valueConverters,

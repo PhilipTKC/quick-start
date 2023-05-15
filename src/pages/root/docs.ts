@@ -1,4 +1,4 @@
-import { IRoute, IRouteableComponent, IRouter, Parameters } from "@aurelia/router";
+import { IRoute, IRouteableComponent, IRouter, Parameters, ReloadBehavior } from "@aurelia/router";
 import { IEventAggregator } from "aurelia";
 
 import { IDocumentService } from "@/services";
@@ -11,8 +11,7 @@ export class Docs implements IRouteableComponent {
     static routes: IRoute[] = [
         {
             path: ":root/:document?",
-            component: () => import("./document"),
-
+            component: () => import("./document"),            
         }
     ];
 

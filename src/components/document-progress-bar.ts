@@ -1,4 +1,4 @@
-import { ICustomElementViewModel, IPlatform } from "aurelia";
+import { ICustomElementViewModel, IPlatform, bindable } from "aurelia";
 
 export class DocumentProgressBar implements ICustomElementViewModel {
     private showProgressBar = false;
@@ -11,19 +11,24 @@ export class DocumentProgressBar implements ICustomElementViewModel {
 
     constructor(@IPlatform private readonly platform: IPlatform) {
         this.handleScrollEvent = () => {
-            const winScroll = window.scrollY || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const { scrollY, document } = this.platform.window;
+            const { documentElement } = document;
+            const { scrollTop, scrollHeight, clientHeight } = documentElement;
+
+            const winScroll = scrollY || scrollTop;
+            const height = scrollHeight - clientHeight;
             const percentage = (winScroll / height) * 100;
+
             this.progressBarElement.style.width = `${percentage}%`;
             this.progressPercentage = percentage;
-          };
+        };
     }
 
     attached() {
-        this.platform.window.document.addEventListener("scroll", this.handleScrollEvent);
+        this.platform.document.addEventListener("scroll", this.handleScrollEvent);
     }
 
     detaching() {
-        this.platform.window.document.removeEventListener("scroll", this.handleScrollEvent);
+        this.platform.document.removeEventListener("scroll", this.handleScrollEvent);
     }
 }
