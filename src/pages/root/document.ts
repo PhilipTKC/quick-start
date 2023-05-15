@@ -85,8 +85,6 @@ export class Document implements IRouteableComponent {
             name: 'markdown-document',
             template: html || "" // TODO: Add a fallback template
         });
-
-        this.codeGroupMap = {};
     }
 
     attached() {
@@ -112,7 +110,6 @@ export class Document implements IRouteableComponent {
     }
 
     toggleEventListenersForCodeGroups(operation: "Add" | "Remove") {
-        // Remove all event listeners
         for (const [key, groups] of Object.entries(this.codeGroupMap)) {
             for (const element of groups) {
                 if (operation === "Add") {
