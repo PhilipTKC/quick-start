@@ -29,11 +29,11 @@ const markdownItConfig = markdownIt({
     .use<ImagePluginOptions>(imageDimensionsPlugin, {
         container: "",
         image: "",
-        loading: "lazy",
-        decode: true,
+        loading: "eager",
+        decode: false,
         // When removeSource is used, DataAttributesPlugin must be used.
         // see ./src/custom-attributes/lazy-load.ts
-        removeSource: true
+        removeSource: false
     })
     /*
     * This plugin creates a collection of tabbed code blocks using custom syntax

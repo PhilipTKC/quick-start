@@ -1,4 +1,4 @@
-import { ICustomElementViewModel, IPlatform, bindable } from "aurelia";
+import { ICustomElementViewModel, IPlatform } from "aurelia";
 
 export class DocumentProgressBar implements ICustomElementViewModel {
     private showProgressBar = false;

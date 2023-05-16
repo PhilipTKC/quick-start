@@ -15,7 +15,7 @@
     "rootDir": ".",
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"]
+      "@qs/*": ["*"]
     },
     "types": ["vite/client", "node"]
   },

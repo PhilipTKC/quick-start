@@ -1,8 +1,6 @@
-// postcss.config.cjs
 module.exports = {
-    plugins: {
-        '@unocss/postcss': {
-            content: ['**/*.{html,md}'],
-        },
-    },
+    plugins: [
+        require("@unocss/postcss")({}),
+        require("autoprefixer")({})
+    ]
 }

@@ -1,9 +1,9 @@
 import { CustomElement } from "aurelia";
 import { IRouteableComponent, Parameters } from "@aurelia/router";
 
-import { IDocumentService } from "@/services";
-import { Attributes, MarkdownDocument } from "@/interfaces";
-import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
+import { IDocumentService } from "@qs/services";
+import { Attributes, MarkdownDocument } from "@qs/interfaces";
+import { AnimationHooks } from "@qs/lifecycle-hooks/animation-hooks";
 
 export class Start implements IRouteableComponent {
     static dependencies = [AnimationHooks];

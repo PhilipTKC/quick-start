@@ -4,13 +4,8 @@ import { transformerDirectives, transformerVariantGroup } from 'unocss';
 import { defineConfig, presetTypography, presetAttributify, presetWind, presetWebFonts, presetUno } from 'unocss';
 
 export default defineConfig({
-  theme: {
-    fontFamily: {
-      sans: '\'Roboto\', sans-serif',
-      mono: '\'Fira Code\', monospace',
-    },
-  },
   presets: [
+    presetAttributify(),
     presetUno(),
     presetTypography(),
     presetWebFonts({
@@ -22,7 +17,9 @@ export default defineConfig({
     })
   ],
   transformers: [
-    transformerCompileClass(),
+    transformerCompileClass({
+      classPrefix: '',
+    }),
     transformerVariantGroup(),
     transformerDirectives(),
   ],

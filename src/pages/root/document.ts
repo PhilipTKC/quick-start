@@ -1,9 +1,9 @@
 import { IRouteableComponent } from "@aurelia/router";
 import { CustomElement, bindable, inject } from "aurelia";
 
-import { IDocumentService } from "@/services/document";
-import { convertToTitleCase, extractIdFromPath } from "@/utility";
-import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
+import { IDocumentService } from "@qs/services/document";
+import { convertToTitleCase, extractIdFromPath } from "@qs/utility";
+import { AnimationHooks } from "@qs/lifecycle-hooks/animation-hooks";
 
 interface GroupedHTMLElements {
     [key: string]: HTMLElement[];
@@ -23,7 +23,7 @@ export class Document implements IRouteableComponent {
         return "Document";
     };
 
-    @bindable private documentRef;
+    @bindable private documentRef: HTMLElement;
 
     private markdownElement;
 
@@ -104,7 +104,7 @@ export class Document implements IRouteableComponent {
     }
 
     detaching() {
-        this.observer.disconnect();
+        // this.observer.disconnect();
 
         this.toggleEventListenersForCodeGroups("Remove");
     }
@@ -132,14 +132,16 @@ export class Document implements IRouteableComponent {
     * Determine cause of bug where the headers are not being highlighted
     */
     intersectionObserver() {
-        const headers = this.hostElement.querySelectorAll("[data-key], [data-key-content]");
+        const elements = this.hostElement.querySelectorAll("[data-id]");
+
 
         const activeKeys = [];
 
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                const dataKey = entry.target.getAttribute("data-key") || entry.target.getAttribute("data-key-content");
+                const dataKey = entry.target.getAttribute("data-id");
                 const headerItem = this.hostElement.querySelector(`[data-for="${dataKey}"]`);
+
                 if (entry.isIntersecting) {
                     activeKeys.push(dataKey);
 
@@ -166,7 +168,7 @@ export class Document implements IRouteableComponent {
             rootMargin: "0px 0px 0px 0px",
         });
 
-        headers.forEach((header) => {
+        elements.forEach((header) => {
             this.observer.observe(header);
         })
     }

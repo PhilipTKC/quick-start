@@ -18,7 +18,7 @@ export default defineConfig({
   resolve: {
     alias:
     {
-      '@': path.resolve(__dirname, './src')
+      '@qs': path.resolve(__dirname, './src')
     }
   },
   assetsInclude: ['_content/**/*.md'],
@@ -26,7 +26,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          "aurelia": ["aurelia"],
+          "aurelia": ["aurelia", "@aurelia/router"],
           "fortawesome": ["@fortawesome/fontawesome-svg-core", "@fortawesome/free-solid-svg-icons", "@fortawesome/free-brands-svg-icons"],
         }
       }

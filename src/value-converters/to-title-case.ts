@@ -1,4 +1,4 @@
-import { convertToTitleCase } from "../utility";
+import { convertToTitleCase } from "@qs/utility";
 
 export class ToTitleCaseValueConverter {
     toView(string: string) {

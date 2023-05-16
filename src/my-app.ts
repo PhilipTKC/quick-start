@@ -1,14 +1,13 @@
 import { IRoute } from "@aurelia/router";
 import { IEventAggregator } from "aurelia";
 
-import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
+import { AnimationHooks } from "@qs/lifecycle-hooks/animation-hooks";
 
-import { dom } from "@/_fontawesome";
+import { dom } from "@qs/_fontawesome";
 
-import '@unocss/reset/tailwind.css';
-import "./css/style.css";
-import "./css/highlighter.css";
-import "./css/nprogress.css";
+import "@qs/css/style.css";
+import "@qs/css/highlighter.css";
+import "@qs/css/nprogress.css";
 
 import nProgress from "nprogress";
 

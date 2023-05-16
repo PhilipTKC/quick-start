@@ -1,3 +1,4 @@
+
 import { bindable, ICustomElementViewModel, IPlatform } from "aurelia";
 
 type Header = {
@@ -31,8 +32,8 @@ export class InThisDocument implements ICustomElementViewModel {
                         return 5;
                     case "H6":
                         return 6;
-                }
-            }
+                };
+            };
 
             return {
                 slug: element.getAttribute("data-key"),

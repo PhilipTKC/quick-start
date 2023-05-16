@@ -1,6 +1,6 @@
 import { IRoute, IRouteableComponent, Parameters, ReloadBehavior } from "@aurelia/router";
 
-import { convertToTitleCase } from "@/utility";
+import { convertToTitleCase } from "@qs/utility";
 
 export class Root implements IRouteableComponent {
     static routes: IRoute[] = [

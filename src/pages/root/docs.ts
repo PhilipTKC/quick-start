@@ -1,9 +1,9 @@
 import { IRoute, IRouteableComponent, IRouter, Parameters, ReloadBehavior } from "@aurelia/router";
 import { IEventAggregator } from "aurelia";
 
-import { IDocumentService } from "@/services";
-import { TableOfContents } from "@/interfaces";
-import { AnimationHooks } from "@/lifecycle-hooks/animation-hooks";
+import { IDocumentService } from "@qs/services";
+import { TableOfContents } from "@qs/interfaces";
+import { AnimationHooks } from "@qs/lifecycle-hooks/animation-hooks";
 
 export class Docs implements IRouteableComponent {
     static dependencies = [AnimationHooks];
@@ -11,7 +11,7 @@ export class Docs implements IRouteableComponent {
     static routes: IRoute[] = [
         {
             path: ":root/:document?",
-            component: () => import("./document"),            
+            component: () => import("./document"),
         }
     ];
 

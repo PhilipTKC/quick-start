@@ -25,6 +25,7 @@ specifiers:
   algoliasearch: ^4.17.0
   animejs: ^3.2.1
   aurelia: latest
+  autoprefixer: ^10.4.14
   dayjs: ^1.11.7
   eslint: ^8.40.0
   highlight.js: ^11.8.0
@@ -38,6 +39,7 @@ specifiers:
   markdown-it-image-dimensions: https://github.com/PhilipTKC/markdown-it-image-dimensions-plugin.git
   nprogress: ^0.2.0
   path: ^0.12.7
+  postcss: ^8.4.23
   rimraf: ^5.0.0
   tslib: ^2.5.0
   typescript: 5.0.4
@@ -68,13 +70,14 @@ devDependencies:
   '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 5.59.5_zaj6dsh3leplki3sfxgbx2w2za
   '@typescript-eslint/parser': 5.59.5_3qfatcekpgbllh6uk5ivyhkbxq
-  '@unocss/postcss': 0.51.12
+  '@unocss/postcss': 0.51.12_postcss@8.4.23
   '@unocss/preset-attributify': 0.51.12
   '@unocss/preset-typography': 0.51.12
   '@unocss/preset-uno': 0.51.12
   '@unocss/preset-web-fonts': 0.51.12
   '@unocss/preset-wind': 0.51.12
   '@unocss/reset': 0.51.12
+  autoprefixer: 10.4.14_postcss@8.4.23
   eslint: 8.40.0
   highlight.js: 11.8.0
   htmlhint: 1.1.4
@@ -82,13 +85,14 @@ devDependencies:
   markdown-it: 13.0.1
   markdown-it-au-external-links: github.com/PhilipTKC/markdown-it-au-external-links/f833f77607fb3c1b8392114cfda7283913acbb47
   markdown-it-code-collection: github.com/PhilipTKC/markdown-it-code-collection/db963d5e26bac500065b4eeb46fcec9f70b4002e
-  markdown-it-data-attribute: github.com/PhilipTKC/markdown-it-data-attribute/303fc09bf625feee66b01da711ad6fbf2d481663
+  markdown-it-data-attribute: github.com/PhilipTKC/markdown-it-data-attribute/88f50d2bffea620d2582b12594c67dd494040bfe
   markdown-it-image-dimensions: github.com/PhilipTKC/markdown-it-image-dimensions-plugin/8aab6b00589739889debd8ba3bdc1d1bb451ce3e
   path: 0.12.7
+  postcss: 8.4.23
   rimraf: 5.0.0
   tslib: 2.5.0
   typescript: 5.0.4
-  unocss: 0.51.12_vite@4.3.5
+  unocss: 0.51.12_postcss@8.4.23+vite@4.3.5
   vite: 4.3.5_@types+node@20.1.4
   vite-plugin-markdown: 2.1.0_vite@4.3.5
 
@@ -1635,9 +1639,11 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss/0.51.12:
+  /@unocss/postcss/0.51.12_postcss@8.4.23:
     resolution: {integrity: sha512-d/EIwAOhnqcswZtq941GOJFwJj0rVyTQDqWa9YFH+9CkwmH92FcsBPEs8uEaQCyq7ZZEPgrg1UE2oa7Dn0fAxw==}
     engines: {node: '>=14'}
+    peerDependencies:
+      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.51.12
       '@unocss/core': 0.51.12
@@ -1890,6 +1896,22 @@ packages:
       '@aurelia/runtime': 2.0.0-beta.5
       '@aurelia/runtime-html': 2.0.0-beta.5
     dev: false
+
+  /autoprefixer/10.4.14_postcss@8.4.23:
+    resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.21.5
+      caniuse-lite: 1.0.30001487
+      fraction.js: 4.2.0
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss: 8.4.23
+      postcss-value-parser: 4.2.0
+    dev: true
 
   /babel-jest/28.1.3_@babel+core@7.21.8:
     resolution: {integrity: sha512-epUaPOEWMk3cWX0M/sPvCHHCe9fMFAa/9hXEgKP8nFfNl/jlGkE9ucq9NqkZGXLDduCJYS0UvSlPUwC0S+rH6Q==}
@@ -2606,6 +2628,10 @@ packages:
     dependencies:
       cross-spawn: 7.0.3
       signal-exit: 4.0.2
+    dev: true
+
+  /fraction.js/4.2.0:
+    resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
   /front-matter/4.0.2:
@@ -3695,6 +3721,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /normalize-range/0.1.2:
+    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -3859,6 +3890,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: true
+
+  /postcss-value-parser/4.2.0:
+    resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
     dev: true
 
   /postcss/8.4.23:
@@ -4323,7 +4358,7 @@ packages:
       jiti: 1.18.2
     dev: true
 
-  /unocss/0.51.12_vite@4.3.5:
+  /unocss/0.51.12_postcss@8.4.23+vite@4.3.5:
     resolution: {integrity: sha512-TjCrFnRq73iU/pxMSMgeWsCm9VPTcg41KEvjZWKJMglROJC+cQ99A7/tiOlamf1Y+TpJxv06K/hUZp+34j8Fmw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4336,7 +4371,7 @@ packages:
       '@unocss/cli': 0.51.12
       '@unocss/core': 0.51.12
       '@unocss/extractor-arbitrary-variants': 0.51.12
-      '@unocss/postcss': 0.51.12
+      '@unocss/postcss': 0.51.12_postcss@8.4.23
       '@unocss/preset-attributify': 0.51.12
       '@unocss/preset-icons': 0.51.12
       '@unocss/preset-mini': 0.51.12
@@ -4353,6 +4388,7 @@ packages:
       '@unocss/transformer-variant-group': 0.51.12
       '@unocss/vite': 0.51.12_vite@4.3.5
     transitivePeerDependencies:
+      - postcss
       - rollup
       - supports-color
       - vite
@@ -4548,13 +4584,10 @@ packages:
     version: 1.0.0
     dev: true
 
-  github.com/PhilipTKC/markdown-it-data-attribute/303fc09bf625feee66b01da711ad6fbf2d481663:
-    resolution: {tarball: https://codeload.github.com/PhilipTKC/markdown-it-data-attribute/tar.gz/303fc09bf625feee66b01da711ad6fbf2d481663}
+  github.com/PhilipTKC/markdown-it-data-attribute/88f50d2bffea620d2582b12594c67dd494040bfe:
+    resolution: {tarball: https://codeload.github.com/PhilipTKC/markdown-it-data-attribute/tar.gz/88f50d2bffea620d2582b12594c67dd494040bfe}
     name: markdown-it-data-attribute
     version: 1.0.0
-    dependencies:
-      markdown-it: 13.0.1
-      nanoid: 3.3.6
     dev: true
 
   github.com/PhilipTKC/markdown-it-image-dimensions-plugin/8aab6b00589739889debd8ba3bdc1d1bb451ce3e:
