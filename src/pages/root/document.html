@@ -1,14 +1,17 @@
 <document-progress-bar></document-progress-bar>
 
-<div class=":uno: flex">
-    <div class=":uno: w-full">
-        <div class=":uno: mt-[100px] mx-auto prose lg:max-w-screen-lg w-full">
-            <au-compose component.bind="markdownElement" ref="documentRef" lazy-load></au-compose>
-        </div>
+<div class="flex">
+  <div class="w-full">
+    <div class="mt-[100px] mx-auto prose lg:max-w-screen-lg w-full">
+      <au-compose component.bind="markdownElement"
+                  ref="documentRef"
+                  lazy-load></au-compose>
     </div>
+  </div>
 
-    <div
-        class=":uno: transform transition duration-500 ml-10 top-0 -right-0 fixed md:relative xl:translate-y-0  -translate-y-full">
-        <in-this-document document-ref.bind="documentRef" if.bind="documentExist"></in-this-document>
-    </div>
+  <div
+       class="fixed top-0 ml-10 transition duration-500 transform -translate-y-full -right-0 md:relative xl:translate-y-0">
+    <in-this-document document-ref.bind="documentRef"
+                      if.bind="documentExist"></in-this-document>
+  </div>
 </div>

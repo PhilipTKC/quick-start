@@ -18,38 +18,38 @@ export class MyApp {
     {
       path: "",
       component: async () => import("./pages/home"),
-      title: "Home"
+      title: "Home",
     },
     {
       path: ":documentId",
       component: async () => import("./pages/root/root"),
-    }
+    },
   ];
 
-  constructor(@IEventAggregator readonly ea: IEventAggregator,) {
+  constructor(@IEventAggregator readonly ea: IEventAggregator) {
     this.subscribeRouterStart();
     this.subscribeRouterEnd();
   }
 
-  attached() {
+  attached(): void {
     dom.watch();
   }
 
-  /**
-  * Subscribe to the router's navigation start event.
-  */
+  /*
+   * Subscribe to the router's navigation start event.
+   */
   subscribeRouterStart() {
-    this.ea.subscribe('au:router:navigation-start', () => {
+    this.ea.subscribe("au:router:navigation-start", () => {
       // Start the progress bar.
       nProgress.start();
     });
   }
 
-  /**
-  * Subscribe to the router's navigation end event.
-  **/
-  subscribeRouterEnd() {
-    this.ea.subscribe('au:router:navigation-end', () => {
+  /*
+   * Subscribe to the router's navigation end event.
+   */
+  subscribeRouterEnd(): void {
+    this.ea.subscribe("au:router:navigation-end", () => {
       // Complete the progress bar.
       nProgress.done();
       window.scrollTo(0, 0);

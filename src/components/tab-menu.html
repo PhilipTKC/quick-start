@@ -1,30 +1,35 @@
 <div>
-    <div class=":uno: flex-wrap justify-center h-18 text-center md:flex fixed mx-auto left-0 right-0 bg-white top-0 border-b-2"
-        id="tab-navigator">
-        <div class=":uno: mt-8">
-            <a class=":uno: mt-4 p-4 transform transition duration-500 top-0 left-0 fixed -translate-x-0  md:-translate-x-full cursor-pointer focus:outline-none" click.trigger="openDrawerNavigationMenu()" if.bind="path !== '/readme/start'">
-                <button
-                    class=":uno: md:w-48 focus:outline-none">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </a>
-            <a load="/" class=":uno: p-4 text-gray-500 border-b-2 focus:outline-none hover:border-indigo-200">
-                <button class=":uno: cursor-pointer md:w-48 focus:outline-none">
-                    <i class="md:mr-3 fa-solid fa-arrow-left"></i> <span class="hidden md:inline-block">Back</span>
-                </button>
-            </a>
-            <a load="start" class=":uno: p-4 text-gray-500 border-b-2 focus:outline-none hover:border-indigo-200">
-                <button class=":uno: cursor-pointer md:w-48 focus:outline-none">
-                    <i class=":uno: md:mr-3 fa-solid fa-star text-yellow-500"></i> <span
-                        class=":uno: hidden md:inline-block">Start</span>
-                </button>
-            </a>
-            <a load="docs" class=":uno: p-4 text-gray-500 border-b-2 focus:outline-none hover:border-indigo-200">
-                <button class=":uno: cursor-pointer md:w-48 focus:outline-none">
-                    <i class=":uno: md:mr-3 fa-solid fa-book-open-reader text-blue-500"></i><span
-                        class=":uno: hidden md:inline-block">Docs</span>
-                </button>
-            </a>
-        </div>
+  <div class="fixed top-0 left-0 right-0 flex-wrap justify-center mx-auto text-center bg-white border-b-2 h-18 md:flex"
+       id="tab-navigator">
+    <div class="mt-8">
+      <a class="fixed top-0 left-0 p-4 mt-4 transition duration-500 transform cursor-pointer -translate-x-0 md:-translate-x-full focus:outline-none"
+         click.trigger="openDrawerNavigationMenu()"
+         if.bind="path !== '/readme/start'">
+        <button class="md:w-48 focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </a>
+      <a load="/"
+         class="p-4 text-gray-500 border-b-2 focus:outline-none hover:border-indigo-200">
+        <button class="cursor-pointer md:w-48 focus:outline-none">
+          <i class="md:mr-3 fa-solid fa-arrow-left"></i>
+          <span class="hidden md:inline-block">Back </span>
+        </button>
+      </a>
+      <a load="start"
+         class="p-4 text-gray-500 border-b-2 focus:outline-none hover:border-indigo-200">
+        <button class="cursor-pointer md:w-48 focus:outline-none">
+          <i class="text-yellow-500 md:mr-3 fa-solid fa-star"></i>
+          <span class="hidden md:inline-block">Start</span>
+        </button>
+      </a>
+      <a load="docs"
+         class="p-4 text-gray-500 border-b-2 focus:outline-none hover:border-indigo-200">
+        <button class="cursor-pointer md:w-48 focus:outline-none">
+          <i class="text-blue-500 md:mr-3 fa-solid fa-book-open-reader"></i>
+          <span class="hidden md:inline-block">Docs</span>
+        </button>
+      </a>
     </div>
+  </div>
 </div>

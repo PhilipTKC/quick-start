@@ -10,7 +10,7 @@
 }
 
 #in-this-document span {
-    border-left:rgb(224, 224, 224) 6px solid;
+    border-left: rgb(224, 224, 224) 6px solid;
     position: absolute;
     left: -25px;
     height: 20px;
@@ -25,12 +25,12 @@
 }
 
 #in-this-document .active-header span {
-    border-left:rgb(99, 102, 241) 6px solid;
+    border-left: rgb(99, 102, 241) 6px solid;
 }
 
 #in-this-document li {
-    margin: 0px!important;
-    padding: 0px!important;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 h1,
@@ -81,7 +81,7 @@ img:not([src]) {
     line-height: 1.25rem;
 }
 
-.code-block:not(.active) {
+.code-block:not(.code-active) {
     display: none;
 }
 
@@ -97,7 +97,7 @@ img:not([src]) {
     user-select: none;
 }
 
-.code-tab.active {
+.code-tab.tab-active {
     background-color: rgb(230, 230, 230);
 }
 

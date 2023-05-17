@@ -1,17 +1,15 @@
 export function convertToTitleCase(string: string) {
-    // Replace all hyphens with spaces
-    string = string.replace(/-/g, ' ');
+  // Replace all hyphens with spaces
+  string = string.replace(/-/g, " ");
 
-    // Convert the string to title case
-    string = string.replace(/\w\S*/g, function (word) {
-        return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
-    });
+  // Convert the string to title case
+  string = string.replace(/\w\S*/g, (word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase());
 
-    return string;
+  return string;
 }
 
 export function extractIdFromPath(url: string) {
-    const regex = /^https?:\/\/[^/]+\/([^/]+)\/.*$/;
+  const regex = /^https?:\/\/[^/]+\/([^/]+)\/.*$/;
 
-    return url.match(regex)[1];
+  return url.match(regex)[1];
 }

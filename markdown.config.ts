@@ -4,7 +4,7 @@ import { highlighter } from './highlighter';
 import aureliaRoutesPlugin from "markdown-it-au-external-links";
 import dataAttributePlugin from "markdown-it-data-attribute";
 import { imageDimensionsPlugin, ImagePluginOptions } from 'markdown-it-image-dimensions';
-import codeCollectionPlugin from "markdown-it-code-collection";
+import { codeCollectionPlugin, CodeCollectionPluginOpts } from "markdown-it-code-collection";
 
 const markdownItConfig = markdownIt({
     html: true,
@@ -39,6 +39,6 @@ const markdownItConfig = markdownIt({
     * This plugin creates a collection of tabbed code blocks using custom syntax
     * https://github.com/PhilipTKC/markdown-it-code-collection
     */
-    .use(codeCollectionPlugin)
+    .use<CodeCollectionPluginOpts>(codeCollectionPlugin)
 
 module.exports = markdownItConfig;

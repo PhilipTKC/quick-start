@@ -1,13 +1,17 @@
-<nav class=":uno: sticky top-[72px] mt-[72px] p-6 h-screen" if.bind="headers.length > 0" style="height: calc(100vh - 72px)">
-    <h2 class=":uno: tracking-wider font-bold text-md uppercase">Viewing On This Page</h2>
-    <ul id="in-this-document" class=":uno: relative ${styles}">
-        <li repeat.for="header of headers"
-            class=":uno: w-76 truncate list-disc py-4 cursor-pointer select-none transition-all duration-500 tracking-wider text-sm"
-            data-for.bind="header.slug" class.bind="['level-' + header.level]">
-            <span></span>
-            <a click.trigger="scrollIntoView(header.slug)">
-                ${header.text}
-            </a>
-        </li>
-    </ul>
+<nav class="sticky top-[72px] mt-[72px] p-6 h-screen"
+     if.bind="headers.length > 0"
+     style="height: calc(100vh - 72px)">
+  <h2 class="font-bold tracking-wider uppercase text-md">
+    Viewing On This Page
+  </h2>
+  <ul id="in-this-document"
+      class="relative ${styles}">
+    <li repeat.for="header of headers"
+        class="py-4 text-sm tracking-wider truncate list-disc transition-all duration-500 cursor-pointer select-none w-76"
+        data-for.bind="header.slug"
+        class.bind="['level-' + header.level]">
+      <span></span>
+      <a click.trigger="scrollIntoView(header.slug)"> ${header.text} </a>
+    </li>
+  </ul>
 </nav>

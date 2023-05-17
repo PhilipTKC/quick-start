@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
 
 import aurelia from '@aurelia/vite-plugin';
 import UnoCSS from 'unocss/vite';
@@ -11,9 +11,18 @@ import path from 'path';
 export default defineConfig({
   plugins: [
     UnoCSS(),
-    aurelia(),
+    splitVendorChunkPlugin(),
+    aurelia({ pre: true, useDev: true }),
     markdown({ mode: [Mode.HTML, Mode.TOC], markdownIt: markdownItConfig }),
   ],
+  /*
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+      generateScopedName: '[hash:base64:5]',
+    }
+  },
+  */
   base: "/",
   resolve: {
     alias:

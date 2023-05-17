@@ -2,37 +2,38 @@ import { CustomElement } from "aurelia";
 import { IRouteableComponent, Parameters } from "@aurelia/router";
 
 import { IDocumentService } from "@qs/services";
-import { Attributes, MarkdownDocument } from "@qs/interfaces";
+import { Attributes } from "@qs/interfaces";
 import { AnimationHooks } from "@qs/lifecycle-hooks/animation-hooks";
 
 export class Start implements IRouteableComponent {
-    static dependencies = [AnimationHooks];
-    
-    private id: string;
+  static dependencies = [AnimationHooks];
 
-    private attributes: Attributes;
+  private id: string;
 
-    private markdownElement: any;
+  private attributes: Attributes;
 
-    private documentExist: boolean;
+  private markdownElement: any;
 
-    constructor(@IDocumentService private readonly documentService: IDocumentService) { }
+  private documentExist: boolean;
 
-    async loading(parameters: Parameters): Promise<void> {
-        this.id = parameters.documentId as string;
+  constructor(
+    @IDocumentService private readonly documentService: IDocumentService,
+  ) { }
 
-        const { attributes, html } = await this.documentService.retrieveRootDocument(this.id);
-        
-        this.attributes = attributes;
+  async loading(parameters: Parameters): Promise<void> {
+    this.id = parameters.documentId as string;
 
-        if (html) {
-            this.documentExist = true;
-        }
+    const { attributes, html } = await this.documentService.retrieveRootDocument(this.id);
 
-        this.markdownElement = CustomElement.define({
-            name: 'markdown-document',
-            template: html || "" // TODO: Add a fallback template
-        });
+    this.attributes = attributes;
 
+    if (html) {
+      this.documentExist = true;
     }
+
+    this.markdownElement = CustomElement.define({
+      name: "markdown-document",
+      template: html || "", // TODO: Add a fallback template
+    });
+  }
 }

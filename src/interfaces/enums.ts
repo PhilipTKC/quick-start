@@ -1,4 +1,4 @@
 export enum DrawerSubscription {
-    Open = "open",
-    Close = "close"
+  Open = "open",
+  Close = "close",
 }
