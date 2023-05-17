@@ -1,6 +1,7 @@
-import { IRoute, IRouteableComponent, Parameters, ReloadBehavior } from "@aurelia/router";
+import { IRoute, IRouteableComponent, Parameters, ReloadBehavior, RouterNavigationEndEvent } from "@aurelia/router";
 
 import { convertToTitleCase } from "@qs/utility";
+import { IEventAggregator } from "aurelia";
 
 export class Root implements IRouteableComponent {
     static routes: IRoute[] = [
@@ -20,7 +21,19 @@ export class Root implements IRouteableComponent {
 
     private id: string;
 
+    private path: string = "";
+
+    constructor(@IEventAggregator private readonly ea: IEventAggregator) {
+        this.subscribeRouteChangeEvent();
+    }
+
     async loading(parameters: Parameters): Promise<void> {
         this.id = parameters.documentId as string;
+    }
+
+    subscribeRouteChangeEvent() {
+        this.ea.subscribe("au:router:navigation-end", (payload: RouterNavigationEndEvent) => {
+            this.path = payload.navigation.path;
+        });
     }
 }

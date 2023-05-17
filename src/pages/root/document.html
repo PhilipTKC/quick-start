@@ -2,12 +2,13 @@
 
 <div class=":uno: flex">
     <div class=":uno: w-full">
-        <div class=":uno: mt-[100px] mx-auto prose md:max-w-screen-md lg:max-w-screen-xl w-full">
+        <div class=":uno: mt-[100px] mx-auto prose lg:max-w-screen-lg w-full">
             <au-compose component.bind="markdownElement" ref="documentRef" lazy-load></au-compose>
         </div>
     </div>
 
-    <div class=":uno: hidden mx-2 xl:flex">
+    <div
+        class=":uno: transform transition duration-500 ml-10 top-0 -right-0 fixed md:relative xl:translate-y-0  -translate-y-full">
         <in-this-document document-ref.bind="documentRef" if.bind="documentExist"></in-this-document>
     </div>
 </div>

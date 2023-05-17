@@ -1,8 +1,10 @@
-<div class=":uno: flex">
+<side-drawer-navigation toc.bind="tableOfContents" if.bind="tableOfContents"></side-drawer-navigation>
+
+<div class=":uno: flex" id="docs-container">
 
     <table-of-contents toc.bind="tableOfContents" if.bind="tableOfContents"></table-of-contents>
 
-    <div class=":uno: w-full container mx-auto md:px-0 px-4 md:ml-96 ml-0" style="height: calc(100vh - 128px)">
+    <div class=":uno: w-full container mx-auto md:px-0 px-4 sm:ml-96 ml-0 transition-all duration-500" style="height: calc(100vh - 128px)">
         <au-viewport></au-viewport>
     </div>
 </div>

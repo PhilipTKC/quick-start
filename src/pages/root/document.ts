@@ -35,7 +35,7 @@ export class Document implements IRouteableComponent {
 
     private documentExist: boolean;
 
-    private handleTabClick: (groups: HTMLElement[], element: HTMLElement, key: string) => void;
+    private handleTabClick: (groups: HTMLElement[], element: HTMLElement, key: string) => any;
 
     private codeGroupMap: GroupedHTMLElements;
 
@@ -127,10 +127,6 @@ export class Document implements IRouteableComponent {
         return document ? `${root}/${document}` : root;
     }
 
-    /*
-    * TODO: REFACTOR!
-    * Determine cause of bug where the headers are not being highlighted
-    */
     intersectionObserver() {
         const elements = this.hostElement.querySelectorAll("[data-id]");
 
@@ -165,7 +161,7 @@ export class Document implements IRouteableComponent {
 
             });
         }, {
-            rootMargin: "0px 0px 0px 0px",
+            rootMargin: "-72px 0px 0px 0px",
         });
 
         elements.forEach((header) => {
