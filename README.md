@@ -2,9 +2,13 @@
 
 ## WIP
 
-This application requires Algolia be configured.
+- [ ] Rewrite plugins for Marked.
+- [ ] Implement Editor for creating/editing documents.
+- [ ] Searchable documents.
 
 ## Algolia Search
+
+This application requires Algolia be configured.
 
 ```bash
 touch algolia.config.json

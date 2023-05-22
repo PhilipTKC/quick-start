@@ -14,7 +14,6 @@ Aurelia
     RouterConfiguration.customize({
       useUrlFragmentHash: false,
       title: {
-        // eslint-disable-next-line no-template-curly-in-string
         appTitle: "${componentTitles}${appTitleSeparator}Quickstart",
       },
       swapOrder: "detach-current-attach-next",

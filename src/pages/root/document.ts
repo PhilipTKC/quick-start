@@ -1,5 +1,7 @@
 import { IRouteableComponent } from "@aurelia/router";
-import { CustomElement, bindable, inject } from "aurelia";
+import {
+  CustomElement, IDisposable, IEventAggregator, bindable, inject,
+} from "aurelia";
 
 import { IDocumentService } from "@qs/services/document";
 import { convertToTitleCase, extractIdFromPath } from "@qs/utility";
@@ -35,6 +37,10 @@ export class Document implements IRouteableComponent {
 
   private documentExist: boolean;
 
+  private documentId: string;
+
+  private documentPath: string;
+
   private handleTabClick: (
     groups: HTMLElement[],
     element: HTMLElement,
@@ -43,9 +49,12 @@ export class Document implements IRouteableComponent {
 
   private codeGroupMap: GroupedHTMLElements;
 
+  private editorSubscriber: IDisposable;
+
   constructor(
     private readonly hostElement: Element,
     @IDocumentService private readonly documentService: IDocumentService,
+    @IEventAggregator private readonly ea: IEventAggregator,
   ) {
     this.handleTabClick = (groups, element, key) => {
       // Remove active class from all elements in the same group
@@ -76,22 +85,24 @@ export class Document implements IRouteableComponent {
   async loading(parameters: Parameters) {
     const { root, document } = parameters;
 
-    const path = this.returnPath({ root, document });
+    this.documentPath = this.returnPath({ root, document });
 
-    const id = extractIdFromPath(window.location.href);
+    this.documentId = extractIdFromPath(window.location.href);
 
-    const { attributes, html, toc } = await this.documentService.retrieveDocument(id, path);
+    const {
+      ATTRIBUTES, HTML, TOC,
+    } = await this.documentService.retrieveDocument(this.documentId, this.documentPath);
 
-    this.attributes = attributes;
-    this.headers = toc;
+    this.attributes = ATTRIBUTES;
+    this.headers = TOC;
 
-    if (html) {
+    if (HTML) {
       this.documentExist = true;
     }
 
     this.markdownElement = CustomElement.define({
       name: "markdown-document",
-      template: html || "", // TODO: Add a fallback template
+      template: HTML || "", // TODO: Add a fallback template
     });
   }
 
@@ -100,7 +111,7 @@ export class Document implements IRouteableComponent {
 
     // Find all elements with the data-group attribute
     const codeTabList = Array.from(
-      this.hostElement.querySelectorAll("[data-group]")
+      this.hostElement.querySelectorAll("[data-group]"),
     );
 
     // Group all elements with the same data-group attribute value
@@ -114,8 +125,7 @@ export class Document implements IRouteableComponent {
   }
 
   detaching() {
-    // this.observer.disconnect();
-
+    this.observer.disconnect();
     this.toggleEventListenersForCodeGroups("Remove");
   }
 
@@ -126,15 +136,11 @@ export class Document implements IRouteableComponent {
     for (const [key, groups] of Object.entries(this.codeGroupMap)) {
       for (const element of groups) {
         if (operation === "Add") {
-          element.addEventListener("click", () =>
-            this.handleTabClick(groups, element, key)
-          );
+          element.addEventListener("click", () => this.handleTabClick(groups, element, key));
         }
 
         if (operation === "Remove") {
-          element.removeEventListener("click", () =>
-            this.handleTabClick(groups, element, key)
-          );
+          element.removeEventListener("click", () => this.handleTabClick(groups, element, key));
         }
       }
     }

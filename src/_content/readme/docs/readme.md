@@ -4,6 +4,10 @@ title: Code Collection Example
 
 # Awesome Code
 
+```ts
+console.log('Hello world');
+```
+
 {{ group="group1" tabs=["Typescript", "Javascript", "Markdown", "C#"] }}
 
 ```ts { group="group1" tab="Typescript" }

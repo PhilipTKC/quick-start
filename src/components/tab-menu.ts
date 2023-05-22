@@ -6,9 +6,7 @@ export class TabMenu implements ICustomElementViewModel {
 
   @bindable path: string;
 
-  constructor(@IEventAggregator private readonly ea: IEventAggregator) {
-
-  }
+  constructor(@IEventAggregator private readonly ea: IEventAggregator) { }
 
   openDrawerNavigationMenu() {
     this.ea.publish(DrawerSubscription.Open);

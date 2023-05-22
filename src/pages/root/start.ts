@@ -23,17 +23,17 @@ export class Start implements IRouteableComponent {
   async loading(parameters: Parameters): Promise<void> {
     this.id = parameters.documentId as string;
 
-    const { attributes, html } = await this.documentService.retrieveRootDocument(this.id);
+    const { ATTRIBUTES, HTML } = await this.documentService.retrieveRootDocument(this.id);
 
-    this.attributes = attributes;
+    this.attributes = ATTRIBUTES;
 
-    if (html) {
+    if (HTML) {
       this.documentExist = true;
     }
 
     this.markdownElement = CustomElement.define({
       name: "markdown-document",
-      template: html || "", // TODO: Add a fallback template
+      template: HTML || "", // TODO: Add a fallback template
     });
   }
 }

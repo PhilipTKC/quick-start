@@ -25,11 +25,14 @@
     "@typescript-eslint"
   ],
   "ignorePatterns": [
+    "uno.config.ts",
     "postcss.config.js",
     "markdown.config.ts",
     "vite.config.js",
     "highlighter.ts",
-    "src/resources.d.ts"
+    "src/resources.d.ts",
+    "tailwind.config.js",
+    "marked.config.ts"
   ],
   "root": true,
   "rules": {

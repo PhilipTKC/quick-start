@@ -15,10 +15,19 @@
     "rootDir": ".",
     "baseUrl": "./src",
     "paths": {
-      "@qs/*": ["*"]
+      "@qs/*": [
+        "*"
+      ]
     },
-    "types": ["vite/client", "node"]
+    "types": [
+      "vite/client",
+      "node"
+    ]
   },
-  "include": ["src/**/*"],
-  "files": ["src/resources.d.ts"]
+  "include": [
+    "src/**/*"
+  ],
+  "files": [
+    "src/resources.d.ts"
+  ]
 }

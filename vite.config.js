@@ -2,27 +2,22 @@ import { defineConfig, splitVendorChunkPlugin } from 'vite';
 
 import aurelia from '@aurelia/vite-plugin';
 import UnoCSS from 'unocss/vite';
-import markdown, { Mode } from 'vite-plugin-markdown';
 
-import markdownItConfig from './markdown.config';
+import markedVitePlugin, { Include } from "marked-vitejs-plugin";
+import markedConfig from "./marked.config";
 
 import path from 'path';
 
 export default defineConfig({
   plugins: [
+    markedVitePlugin({
+      marked: markedConfig,
+      include: [Include.HTML, Include.YAML, Include.TOC]
+    }),
     UnoCSS(),
     splitVendorChunkPlugin(),
     aurelia({ pre: true, useDev: true }),
-    markdown({ mode: [Mode.HTML, Mode.TOC], markdownIt: markdownItConfig }),
   ],
-  /*
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
-      generateScopedName: '[hash:base64:5]',
-    }
-  },
-  */
   base: "/",
   resolve: {
     alias:
