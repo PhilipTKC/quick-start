@@ -2,7 +2,7 @@
 
 ## WIP
 
-- [ ] Rewrite plugins for Marked.
+- [ ] Rewrite current plugins for Micromark.
 - [ ] Implement Editor for creating/editing documents.
 - [ ] Searchable documents.
 
