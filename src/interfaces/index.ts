@@ -1,7 +1,7 @@
 export type Attributes = Record<string, unknown>;
-export type TOC = { level: string, content: string }
+export type TOC = { level: string, content: string };
 
-export type MarkdownDocument = { ATTRIBUTES: Attributes, HTML: string, TOC: TOC[] };
+export type MarkdownDocument = { FRONTMATTER: Attributes, HTML: string, TOC: TOC[] };
 
 export interface TableOfContents {
   docs: Document[],

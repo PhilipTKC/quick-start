@@ -16,7 +16,7 @@ export class DocumentService {
     try {
       return await import(`../_content/${documentId}/${documentId}.md`);
     } catch (error) {
-      return { ATTRIBUTES: null, HTML: null, TOC: null };
+      return { FRONTMATTER: null, HTML: null, TOC: null };
     }
   }
 
@@ -45,7 +45,7 @@ export class DocumentService {
       return await modules[`../_content/${documentId}/docs/${documentPath}.md`]();
     } catch (e) {
       return {
-        ATTRIBUTES: null, HTML: null, TOC: null,
+        FRONTMATTER: null, HTML: null, TOC: null,
       };
     }
   }

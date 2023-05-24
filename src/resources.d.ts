@@ -28,9 +28,7 @@ declare module '*.css' {
 }
 
 declare module '*.md' {
-  export const YAML: Record<string, unknown>;
-
-  export const TOC: { level: number; text: string; slug: string; }[]
+  export const FRONTMATTER: Record<string, string, number, boolean, (string | number)[]>;
 
   export const HTML: string;
 }

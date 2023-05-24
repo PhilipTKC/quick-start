@@ -3,16 +3,15 @@ import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import aurelia from '@aurelia/vite-plugin';
 import UnoCSS from 'unocss/vite';
 
-import markedVitePlugin, { Include } from "marked-vitejs-plugin";
-import markedConfig from "./marked.config";
+import micromarkPlugin, { Include, Use } from "/home/philip/Development/Latest/_remarked-plugin-template"
 
 import path from 'path';
 
 export default defineConfig({
   plugins: [
-    markedVitePlugin({
-      marked: markedConfig,
-      include: [Include.HTML, Include.YAML, Include.TOC]
+    micromarkPlugin({
+      include: [Include.HTML, Include.FRONTMATTER],
+      use: [Use.GFM, Use.FRONTMATTER]
     }),
     UnoCSS(),
     splitVendorChunkPlugin(),

@@ -1,7 +1,7 @@
 ---
 title: README
 id: readme
-category: README
+category: ["Hello", "World"]
 category_id: README
 description: README
 last_updated: 2023-01-01T00:00:00.000Z
@@ -10,10 +10,10 @@ docs: true
 
 ## This is a README
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget leo sapien. Proin varius posuere orci vitae sagittis. Pellentesque ultricies porttitor elit, id tempor arcu pellentesque non. Nulla ac leo sagittis, laoreet elit a, consectetur justo. Curabitur pharetra malesuada vulputate. Praesent pretium sed turpis ut tempor. Donec accumsan consectetur bibendum. Sed quis vestibulum turpis. Duis luctus, turpis at convallis sagittis, ex odio scelerisque nisl, nec bibendum quam sapien non ante.
 

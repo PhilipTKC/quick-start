@@ -23,9 +23,9 @@ export class Start implements IRouteableComponent {
   async loading(parameters: Parameters): Promise<void> {
     this.id = parameters.documentId as string;
 
-    const { ATTRIBUTES, HTML } = await this.documentService.retrieveRootDocument(this.id);
+    const { FRONTMATTER, HTML } = await this.documentService.retrieveRootDocument(this.id);
 
-    this.attributes = ATTRIBUTES;
+    this.attributes = FRONTMATTER;
 
     if (HTML) {
       this.documentExist = true;

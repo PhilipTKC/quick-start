@@ -90,10 +90,10 @@ export class Document implements IRouteableComponent {
     this.documentId = extractIdFromPath(window.location.href);
 
     const {
-      ATTRIBUTES, HTML, TOC,
+      FRONTMATTER, HTML, TOC,
     } = await this.documentService.retrieveDocument(this.documentId, this.documentPath);
 
-    this.attributes = ATTRIBUTES;
+    this.attributes = FRONTMATTER;
     this.headers = TOC;
 
     if (HTML) {
